@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="wrapper"> <img id="picture1" src="images/1.jpg" width="200px">
+	<img id="picture2" src="images/2.jpg" width="200px">
+	<img id="picture3" src="images/3.jpg" width="200px">
+	<p><input type="submit" value="Запустить карусель!" onclick="go()" id="go"></p>	
+	</div>
+  
+	 
+</body>
+<script>
+	
+		//Запускает таймер
+		function go(){
+			window.timerId = window.setInterval(timer, 1000);
+			document.getElementById('go').disabled = true;
+		} 
+		function timer(){
+			var img1 = document.getElementById('picture1');
+			var img2 = document.getElementById('picture2');
+			var img3 = document.getElementById('picture3');
+			var tmp = img1.src;
+			img1.src = img2.src;
+			img2.src = img3.src;
+			img3.src = tmp;
+		}
+	
+    
+</script>
+<style>
+
+		input {
+			width: 200px;
+		}
+		#wrapper, #test {
+			text-align: center;
+		}
+		#test {
+			font-size: 24px;
+		}
+	
+</style>
+</html>
